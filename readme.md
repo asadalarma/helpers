@@ -3,7 +3,7 @@
 
 <p>
 
-General purpose function that we eventually everytime..!
+General purpose function that we eventually runs everytime..!
 
 
 </p>
