@@ -37,4 +37,42 @@ $array = [
 
 
 
-echo $general->arrayunshift($array);
+//echo $general->arrayunshift($array);
+
+function reverse($str)
+{
+    if (strlen($str) < 2) {
+        return $str;
+    }
+
+    return reverse(substr($str, 1)) . $str[0];
+}
+
+
+function reverseStringRecursive($string)
+{
+    // Recursion Termination Condition or Base Case
+    if (strlen($string) < 2) {
+        return $string;
+    }
+
+    // Recursive Call
+    return reverseStringRecursive(substr($string, 1)) . $string[0];
+}
+
+function reverseStringDivideAndConquer($string)
+{
+    // Base case
+    if (strlen($string) < 2) {
+        return $string;
+    }
+
+    $mid   = (int) strlen($string) / 2;
+    $left  = substr($string, 0, $mid);
+    $right = substr($string, $mid);
+
+    // Flip the substring
+    return reverseStringDivideAndConquer($right) . reverseStringDivideAndConquer($left);
+}
+
+echo reverseStringDivideAndConquer("abc");
